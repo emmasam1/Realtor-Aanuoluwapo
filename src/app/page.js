@@ -5,6 +5,7 @@ import Services from "@/components/services/Services";
 import Process from "@/components/process/Process";
 import Testimonials from "@/components/testimonials/Testimonials";
 import FAQ from "@/components/faq/FAQ";
+import DownloadCTA from "@/components/cta/DownloadCTA";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <FAQ />
+      <DownloadCTA />
     </main>
   );
 }
