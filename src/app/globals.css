@@ -7,28 +7,38 @@
    Light Theme
 =========================== */
 :root {
-  /* Backgrounds */
-  --background: #ffffff;
-  --background-secondary: #f8fafc;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 
-  /* Text */
-  --foreground: #111827;
-  --foreground-muted: #6b7280;
-
-  /* Brand */
-  --primary: #0f766e;
-  --primary-hover: #115e59;
-  --secondary: #14b8a6;
-  --accent: #d4af37;
-
-  /* UI */
-  --border: #e5e7eb;
   --card: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.08);
 
-  /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --border: #e2e8f0;
+
+  --primary: #047857;
+
+  --primary-hover: #065f46;
+
+  --secondary: #d4af37;
+
+  --muted: #64748b;
+}
+
+.dark {
+  --background: #020617;
+
+  --foreground: #f8fafc;
+
+  --card: #0f172a;
+
+  --border: #1e293b;
+
+  --primary: #10b981;
+
+  --primary-hover: #34d399;
+
+  --secondary: #d4af37;
+
+  --muted: #94a3b8;
 }
 
 /* ===========================
