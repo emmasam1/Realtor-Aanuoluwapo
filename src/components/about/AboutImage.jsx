@@ -15,14 +15,20 @@ export default function AboutImage() {
 
       {/* Image Card */}
 
-      <div className="relative overflow-hidden rounded-[40px] border border-border bg-card p-5 shadow-2xl">
+     <div className="rounded-[40px] overflow-hidden border border-border shadow-2xl">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-0 top-20 h-[550px] w-[550px] rounded-full bg-primary opacity-10 blur-[180px]" />
 
-        <img
-          src="/ceo2.jpeg"
-          alt="Mentor"
-          className="w-full rounded-[30px]"
-        />
+        <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-secondary opacity-10 blur-[180px]" />
 
+        <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-5 blur-[120px]" />
+      </div>
+        
+        <img src="/ceo1.jpeg" alt="Realtor" className="w-full" />
+
+              <div className="absolute right-20 top-24 h-20 w-20 rounded-full border border-primary/20" />
+
+      <div className="absolute left-20 bottom-24 h-12 w-12 rounded-full border border-primary/20" />
       </div>
 
       {/* Experience */}
