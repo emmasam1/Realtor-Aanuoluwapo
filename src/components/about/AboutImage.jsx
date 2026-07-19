@@ -24,7 +24,7 @@ export default function AboutImage() {
         <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-5 blur-[120px]" />
       </div>
         
-        <img src="/ceo1.jpeg" alt="Realtor" className="w-full" />
+        <img src="/ceo2.jpeg" alt="Realtor" className="w-full" />
 
               <div className="absolute right-20 top-24 h-20 w-20 rounded-full border border-primary/20" />
 
