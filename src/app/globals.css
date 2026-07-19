@@ -122,3 +122,37 @@ a {
 button {
   transition: all 0.25s ease;
 }
+
+/* ===========================
+   FAQ
+=========================== */
+
+.premium-faq .ant-collapse-item {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: 22px !important;
+  overflow: hidden;
+  background: var(--card);
+  transition: .3s;
+}
+
+.premium-faq .ant-collapse-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.premium-faq .ant-collapse-header {
+  padding: 22px 28px !important;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.premium-faq .ant-collapse-body{
+  color: var(--secondary)!important;
+}
+
+.premium-faq .ant-collapse-content-box {
+  padding: 0 28px 24px !important;
+  color: var(--secondary);
+  line-height: 1.9;
+}
