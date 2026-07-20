@@ -5,6 +5,7 @@ import {
   Button,
   Typography,
   message,
+  Divider,
 } from "antd";
 
 import {
@@ -14,25 +15,22 @@ import {
   DollarOutlined,
   UserOutlined,
   CreditCardOutlined,
+  SafetyCertificateOutlined,
 } from "@ant-design/icons";
 
 const { Title, Text } = Typography;
 
-export default function PaymentModal({
-  open,
-  onClose,
-}) {
+export default function PaymentModal({ open, onClose }) {
   const accountNumber = "0123456789";
   const accountName = "Jane Doe";
   const bank = "GTBank";
   const amount = "₦10,000";
 
-  const whatsapp =
-    "https://wa.me/2348012345678";
+  const whatsapp = "https://wa.me/2348012345678";
 
   const copy = async (text) => {
     await navigator.clipboard.writeText(text);
-    message.success("Copied");
+    message.success("Account number copied");
   };
 
   return (
@@ -41,104 +39,133 @@ export default function PaymentModal({
       footer={null}
       onCancel={onClose}
       centered
-      width={480}
+      width={430}
     >
-
       <Title
         level={4}
         style={{
-          marginBottom: 5,
+          marginBottom: 4,
         }}
       >
         Complete Your Payment
       </Title>
 
       <Text type="secondary">
-
-        Make payment using the details below then send
-        your receipt on WhatsApp.
-
+        Transfer the guide fee using the account details below, then send
+        your payment receipt via WhatsApp for verification.
       </Text>
 
-      <div className="mt-8 grid grid-cols-2 gap-4">
+      <Divider />
 
-        <div className="rounded-2xl border border-border bg-card p-5">
+      <div className="space-y-3">
 
-          <DollarOutlined className="mb-3 text-xl text-primary" />
+        {/* Amount */}
 
-          <p className="text-sm text-foreground-muted">
+        <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-4 py-3">
 
-            Amount
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
 
-          </p>
+            <DollarOutlined className="text-primary text-lg" />
 
-          <h3 className="mt-2 text-2xl font-black">
+          </div>
 
-            {amount}
+          <div>
 
-          </h3>
+            <p className="text-xs text-foreground-muted">
+              Amount
+            </p>
 
-        </div>
+            <h3 className="text-lg font-bold">
+              {amount}
+            </h3>
 
-        <div className="rounded-2xl border border-border bg-card p-5">
-
-          <BankOutlined className="mb-3 text-xl text-primary" />
-
-          <p className="text-sm text-foreground-muted">
-
-            Bank
-
-          </p>
-
-          <h3 className="mt-2 text-xl font-bold">
-
-            {bank}
-
-          </h3>
+          </div>
 
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-5">
+        {/* Bank */}
 
-          <UserOutlined className="mb-3 text-xl text-primary" />
+        <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-4 py-3">
 
-          <p className="text-sm text-foreground-muted">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
 
-            Account Name
+            <BankOutlined className="text-primary text-lg" />
 
-          </p>
+          </div>
 
-          <h3 className="mt-2 text-lg font-bold">
+          <div>
 
-            {accountName}
+            <p className="text-xs text-foreground-muted">
+              Bank
+            </p>
 
-          </h3>
+            <h3 className="font-semibold">
+              {bank}
+            </h3>
+
+          </div>
 
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-5">
+        {/* Account Name */}
 
-          <CreditCardOutlined className="mb-3 text-xl text-primary" />
+        <div className="flex items-center gap-4 rounded-xl border border-border bg-card px-4 py-3">
 
-          <p className="text-sm text-foreground-muted">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
 
-            Account Number
+            <UserOutlined className="text-primary text-lg" />
 
-          </p>
+          </div>
 
-          <h3 className="mt-2 text-xl font-black tracking-widest">
+          <div>
 
-            {accountNumber}
+            <p className="text-xs text-foreground-muted">
+              Account Name
+            </p>
 
-          </h3>
+            <h3 className="font-semibold">
+              {accountName}
+            </h3>
 
-          <Button
-            className="mt-4"
-            icon={<CopyOutlined />}
-            onClick={() => copy(accountNumber)}
-          >
-            Copy
-          </Button>
+          </div>
+
+        </div>
+
+        {/* Account Number */}
+
+        <div className="rounded-2xl border border-primary/30 bg-primary/5 p-4">
+
+          <div className="flex items-center justify-between gap-4">
+
+            <div>
+
+              <div className="flex items-center gap-2">
+
+                <CreditCardOutlined className="text-primary" />
+
+                <span className="text-xs text-foreground-muted">
+                  Account Number
+                </span>
+
+              </div>
+
+              <h2 className="mt-2 text-2xl font-black tracking-[4px]">
+
+                {accountNumber}
+
+              </h2>
+
+            </div>
+
+            <Button
+              type="primary"
+              icon={<CopyOutlined />}
+              onClick={() => copy(accountNumber)}
+            >
+              Copy
+            </Button>
+
+          </div>
 
         </div>
 
@@ -146,23 +173,30 @@ export default function PaymentModal({
 
       <Button
         type="primary"
-        size="large"
         block
+        size="large"
+        className="mt-6 h-11"
         icon={<WhatsAppOutlined />}
-        className="mt-8 h-12"
         href={`${whatsapp}?text=Hello,%20I%20have%20made%20payment%20for%20the%20Realtor%20Training%20Guide.%20Please%20find%20my%20payment%20receipt%20attached.`}
         target="_blank"
       >
         I've Made Payment
       </Button>
 
-      <p className="mt-5 text-center text-sm text-foreground-muted leading-7">
+      <div className="mt-5 flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3">
 
-        After your payment has been verified, you'll receive a
-        secure one-time download link on WhatsApp. The link
-        expires automatically after the guide has been downloaded.
+        <SafetyCertificateOutlined className="mt-1 text-primary" />
 
-      </p>
+        <p className="text-xs leading-6 text-foreground-muted">
+
+          After your payment has been verified, you'll receive a
+          <strong> secure one-time download link </strong>
+          via WhatsApp. The link becomes invalid automatically after the guide
+          has been downloaded successfully.
+
+        </p>
+
+      </div>
 
     </Modal>
   );

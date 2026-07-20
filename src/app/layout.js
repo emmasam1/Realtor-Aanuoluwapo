@@ -3,6 +3,9 @@ import "./globals.css";
 
 import Navbar from "@/components/navbar/Navbar";
 import Providers from "./providers";
+import Footer from "@/components/footer/Footer";
+import FloatingSocials from "@/components/floating/FloatingSocials";
+import ScrollToTop from "@/components/floating/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +37,13 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar />
 
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
+
+          <FloatingSocials />
+
+          <ScrollToTop />
+
+          <Footer />
         </Providers>
       </body>
     </html>

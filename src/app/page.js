@@ -6,6 +6,7 @@ import Process from "@/components/process/Process";
 import Testimonials from "@/components/testimonials/Testimonials";
 import FAQ from "@/components/faq/FAQ";
 import DownloadCTA from "@/components/cta/DownloadCTA";
+import Contact from "@/components/contact/Contact";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <DownloadCTA />
+      <Contact />
     </main>
   );
 }
